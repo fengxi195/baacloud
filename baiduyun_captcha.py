@@ -12,6 +12,6 @@ def captche_main(image_data):
     temp_data = {
         'image': base64.b64encode(image_data)
     }
-    data = req.post(temp_url, data=temp_data, headers=header)
+    data = req.post(temp_url, data=temp_data, headers=header) # 提交验证码图
     Code = data.json()['words_result'][0]['words'].replace(' ', '')
-    return Code
+    return Code # 返回识别的结果
